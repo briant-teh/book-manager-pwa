@@ -1,0 +1,24 @@
+<header>
+    <nav class="nav-wrapper deep-purple darken-4">
+        <div class="container">
+            <a class="brand-logo" routerLink="/home">Book Manager</a>
+            <a class="sidenav-trigger" href="#" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <!-- desktop menu -->
+            <ul class="right hide-on-med-and-down">
+                <li><a routerLink="/about">About</a></li>
+                <li><a routerLink="/contact">Contact</a></li>
+            </ul>
+
+
+        </div>
+    </nav>
+
+    <!-- mobile menu -->
+    <ul class="sidenav" id="mobile-menu">
+        <li><a routerLink="/about" class="sidenav-close">About</a></li>
+        <li><a routerLink="/contact" class="sidenav-close">Contact</a></li>
+    </ul>
+</header>
