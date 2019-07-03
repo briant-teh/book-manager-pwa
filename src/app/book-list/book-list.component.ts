@@ -42,9 +42,27 @@ export class BookListComponent implements OnInit {
 
     addBook(book): void {
         console.log('adding book', book);
+        if (book.title && book.title.length > 0) {
+            this.firestoreService.addBook(book)
+                .then(result => {
+                    console.log('addBook result', result);
+                })
+                .catch(err => {
+                    console.log('addBook err', err);
+                });
+        }
     }
 
     deleteBook(id): void {
         console.log('deleting book...', id);
+        if (id) {
+            this.firestoreService.deleteBook(id)
+                .then(result => {
+                    console.log('deleteBook result:', result);
+                })
+                .catch(err => {
+                    console.log('deleteBook err:', err);
+                });
+        }
     }
 }

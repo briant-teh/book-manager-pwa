@@ -10,10 +10,34 @@ export class FirestoreService {
 
     constructor(
         private db: AngularFirestore
-    ) { 
+    ) {
     }
 
     getBooksActions(): Observable<any> {
         return this.db.collection('books').snapshotChanges();
+    }
+
+    addBook(book): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.db.collection('books').add(book)
+                .then(result => {
+                    resolve(result);
+                })
+                .catch(err => {
+                    reject(err);
+                });
+        });
+    }
+
+    deleteBook(id): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.db.collection('books').doc('cat').delete()
+                .then(result => {
+                    resolve(result);
+                })
+                .catch(err => {
+                    reject(err);
+                });
+        });
     }
 }
