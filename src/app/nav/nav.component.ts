@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
 
     ngOnInit() {
         $('document').ready(() => {
-            $('.sidenav').sidenav();
-        })
+            $('#mobile-menu').sidenav({edge: 'right'});
+        });
     }
 }

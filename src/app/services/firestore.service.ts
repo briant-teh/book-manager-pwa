@@ -6,16 +6,14 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class FirestoreService {
-    booksObservable: Observable<any>
+    // booksObservable: Observable<any>
 
     constructor(
         private db: AngularFirestore
     ) { 
     }
 
-    getBooks(): Observable<any> {
-        this.booksObservable = this.db.collection('books').valueChanges();
-        
-        return this.booksObservable;
+    getBooksActions(): Observable<any> {
+        return this.db.collection('books').snapshotChanges();
     }
 }

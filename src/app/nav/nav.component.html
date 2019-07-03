@@ -2,7 +2,7 @@
     <nav class="nav-wrapper deep-purple darken-4">
         <div class="container">
             <a class="brand-logo" routerLink="/home">Book Manager</a>
-            <a class="sidenav-trigger" href="#" data-target="mobile-menu">
+            <a class="sidenav-trigger right" href="#" data-target="mobile-menu">
                 <i class="material-icons">menu</i>
             </a>
 
@@ -13,12 +13,12 @@
                 <li><a routerLink="/contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
 
-    <!-- mobile menu -->
-    <ul class="sidenav" id="mobile-menu">
-        <li><a routerLink="/book-list" class="sidenav-close">Books</a></li>
-        <li><a routerLink="/about" class="sidenav-close">About</a></li>
-        <li><a routerLink="/contact" class="sidenav-close">Contact</a></li>
-    </ul>
+        <!-- mobile menu -->
+        <ul class="sidenav right" id="mobile-menu">
+            <li><a routerLink="/book-list" class="sidenav-close">Books</a></li>
+            <li><a routerLink="/about" class="sidenav-close">About</a></li>
+            <li><a routerLink="/contact" class="sidenav-close">Contact</a></li>
+        </ul>
+    </nav>
 </header>

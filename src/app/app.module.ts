@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 // angular fire
@@ -28,6 +29,7 @@ import { BookListComponent } from './book-list/book-list.component';
     imports: [
         BrowserModule,
         AppRoutingModule,
+        FormsModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule
     ],
