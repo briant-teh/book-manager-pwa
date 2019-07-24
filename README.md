@@ -1,3 +1,5 @@
+https://book-manager-53962.firebaseapp.com/book-list
+
 # BookManagerPwa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
