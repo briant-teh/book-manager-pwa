@@ -1,5 +1,9 @@
 <app-nav></app-nav>
 
+<div class="container">
+    <h4 class="grey-text text-darken-2">Books</h4>
+</div>
+
 <div class="book-panel container deep-purple lighten-5 grey-text text-darken-2 z-depth-1" *ngFor="let book of books">
     <div class="row valign-wrapper">
         <div class="col s2 center">
@@ -41,13 +45,29 @@
                 <label for="author">Author</label>
             </div>
             <div class="input-field">
-                <input type="text" id="genre" placeholder="Enter genre..."  autocomplete="off"
-                    [(ngModel)]="book.genre" name="genre">
+                <input type="text" id="genre" placeholder="Enter genre..." autocomplete="off" [(ngModel)]="book.genre"
+                    name="genre">
                 <label for="genre">Genre</label>
             </div>
             <div class="input-field center">
-                <button class="btn deep-purple accent-2 waves-effect waves-light sidenav-close" (click)="addBook(book)">Add</button>
+                <button class="btn deep-purple accent-2 waves-effect waves-light sidenav-close"
+                    (click)="addBook(book)">Add</button>
             </div>
         </form>
+    </div>
+</div>
+
+<div class="container hide-on-med-and-down">
+    <div class="carousel">
+        <!-- <a class="carousel-item" href="#one"><img src="https://lorempixel.com/250/250/nature/1"></a>
+        <a class="carousel-item" href="#two"><img src="https://lorempixel.com/250/250/nature/2"></a>
+        <a class="carousel-item" href="#three"><img src="https://lorempixel.com/250/250/nature/3"></a>
+        <a class="carousel-item" href="#four"><img src="https://lorempixel.com/250/250/nature/4"></a>
+        <a class="carousel-item" href="#five"><img src="https://lorempixel.com/250/250/nature/5"></a> -->
+        <a class="carousel-item" href="#six"><img src="../../assets/img/the-arsonist.jpg" class="responsive-img"></a>
+        <a class="carousel-item" href="#six"><img src="../../assets/img/the-miracle.jpg" class="responsive-img"></a>
+        <a class="carousel-item" href="#six"><img src="../../assets/img/six-of-crows.jpg" class="responsive-img"></a>
+        <a class="carousel-item" href="#six"><img src="../../assets/img/norse-mythology.jpeg" class="responsive-img"></a>
+        <a class="carousel-item" href="#six"><img src="../../assets/img/out-of-the-box.jpg" class="responsive-img"></a>
     </div>
 </div>

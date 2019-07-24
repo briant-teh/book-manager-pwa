@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../services/firestore.service';
 
 declare var $: any;
+declare var M: any;
 
 @Component({
     selector: 'app-book-list',
@@ -22,6 +23,13 @@ export class BookListComponent implements OnInit {
     ngOnInit() {
         $('document').ready(() => {
             $('#add-form').sidenav();
+            $('.carousel').carousel();
+
+            var carousel = M.Carousel.getInstance(document.querySelector('.carousel'));
+
+            setInterval(() => {
+                carousel.next();
+            }, 5000);
         });
 
         this.getBooks();
@@ -35,8 +43,6 @@ export class BookListComponent implements OnInit {
                     data: action.payload.doc.data()
                 }
             });
-
-            console.log('books', this.books);
         });
     }
 
@@ -47,34 +53,19 @@ export class BookListComponent implements OnInit {
             author: '',
             genre: ''
         };
-        console.log('BOOK', book);
-        console.log('adding book', bookToAdd);
 
         if (bookToAdd.title && bookToAdd.title.length > 0) {
             this.firestoreService.addBook(bookToAdd)
                 .then(result => {
-
                     console.log('addBook result', result);
                 })
                 .catch(err => {
                     console.log('addBook err', err);
                 });
         }
-
-        // if (book.title && book.title.length > 0) {
-        //     this.firestoreService.addBook(book)
-        //         .then(result => {
-
-        //             console.log('addBook result', result);
-        //         })
-        //         .catch(err => {
-        //             console.log('addBook err', err);
-        //         });
-        // }
     }
 
     deleteBook(id): void {
-        console.log('deleting book...', id);
         if (id) {
             this.firestoreService.deleteBook(id)
                 .then(result => {
