@@ -41,16 +41,31 @@ export class BookListComponent implements OnInit {
     }
 
     addBook(book): void {
-        console.log('adding book', book);
-        if (book.title && book.title.length > 0) {
-            this.firestoreService.addBook(book)
+        let bookToAdd = JSON.parse(JSON.stringify(book));
+        console.log('adding book', bookToAdd);
+        book = {};
+
+        if (bookToAdd.title && bookToAdd.title.length > 0) {
+            this.firestoreService.addBook(bookToAdd)
                 .then(result => {
+
                     console.log('addBook result', result);
                 })
                 .catch(err => {
                     console.log('addBook err', err);
                 });
         }
+
+        // if (book.title && book.title.length > 0) {
+        //     this.firestoreService.addBook(book)
+        //         .then(result => {
+
+        //             console.log('addBook result', result);
+        //         })
+        //         .catch(err => {
+        //             console.log('addBook err', err);
+        //         });
+        // }
     }
 
     deleteBook(id): void {
