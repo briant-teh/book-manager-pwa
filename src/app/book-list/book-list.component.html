@@ -5,11 +5,11 @@
         <div class="col s2 center">
             <img class="responsive-img" src="../../assets/img/book-icon.png">
         </div>
-        <div class="col s6">
+        <div class="col s8 m6">
             <p>Title: {{book.data.title}}</p>
             <p>Author: {{book.data.author}}</p>
         </div>
-        <div class="col s1 offset-s3 center-align">
+        <div class="col m1 offset-m3 offset-s1 center-align">
             <i class="material-icons" (click)="deleteBook(book.id)">delete_outline</i>
         </div>
     </div>
@@ -31,17 +31,17 @@
             </div>
             <div class="divider"></div>
             <div class="input-field">
-                <input class="validate" type="text" id="title" placeholder="Enter book title..." 
+                <input class="validate" type="text" id="title" placeholder="Enter book title..." autocomplete="off"
                     [(ngModel)]="book.title" name="title">
                 <label for="label">Title</label>
             </div>
             <div class="input-field">
-                <input type="text" id="author" placeholder="Enter author name..." 
+                <input type="text" id="author" placeholder="Enter author name..." autocomplete="off"
                     [(ngModel)]="book.author" name="author">
                 <label for="author">Author</label>
             </div>
             <div class="input-field">
-                <input type="text" id="genre" placeholder="Enter genre..." 
+                <input type="text" id="genre" placeholder="Enter genre..."  autocomplete="off"
                     [(ngModel)]="book.genre" name="genre">
                 <label for="genre">Genre</label>
             </div>

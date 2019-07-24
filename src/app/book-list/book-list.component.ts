@@ -42,8 +42,13 @@ export class BookListComponent implements OnInit {
 
     addBook(book): void {
         let bookToAdd = JSON.parse(JSON.stringify(book));
+        this.book = {
+            title: '',
+            author: '',
+            genre: ''
+        };
+        console.log('BOOK', book);
         console.log('adding book', bookToAdd);
-        book = {};
 
         if (bookToAdd.title && bookToAdd.title.length > 0) {
             this.firestoreService.addBook(bookToAdd)

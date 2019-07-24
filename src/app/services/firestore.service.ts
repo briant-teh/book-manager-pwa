@@ -31,7 +31,7 @@ export class FirestoreService {
 
     deleteBook(id): Promise<any> {
         return new Promise((resolve, reject) => {
-            this.db.collection('books').doc('cat').delete()
+            this.db.collection('books').doc(id).delete()
                 .then(result => {
                     resolve(result);
                 })
