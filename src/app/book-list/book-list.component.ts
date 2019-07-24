@@ -11,7 +11,7 @@ declare var M: any;
 })
 export class BookListComponent implements OnInit {
     book: any = {
-        
+
     };
     books: [];
 
@@ -23,7 +23,11 @@ export class BookListComponent implements OnInit {
     ngOnInit() {
         $('document').ready(() => {
             $('#add-form').sidenav();
-            $('.carousel').carousel();
+            // $('.carousel').carousel();
+
+            $('.carousel').carousel({
+                indicators: true
+            });
 
             var carousel = M.Carousel.getInstance(document.querySelector('.carousel'));
 
@@ -35,7 +39,8 @@ export class BookListComponent implements OnInit {
         this.getBooks();
     }
 
-    getBooks(): void {this.firestoreService.getBooksActions()
+    getBooks(): void {
+        this.firestoreService.getBooksActions()
         .subscribe(result => {
             this.books = result.map(action => {
                 return {

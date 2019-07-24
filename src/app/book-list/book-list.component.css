@@ -20,8 +20,22 @@ form > div.input-field {
     margin-top: 30px;
 }
 
-.carousel .carousel-item {
-    height: 250px;
+
+/* .carousel.book-carousel {
+    height: 700px;
+} */
+
+.carousel.book-carousel .carousel-item {
+    height: 300px;
+}
+
+.carousel.cat-carousel {
+    height: 700px;
+}
+
+.carousel.cat-carousel .carousel-item {
+    height: 900px;
+    width: 900px;
 }
 
 .carousel-item img {
